@@ -1,0 +1,37 @@
+.horizontal-card {
+	display: flex;
+	border: 1px solid gray;
+	margin-bottom: 1rem;
+}
+.horizontal-card:hover{
+	cursor: pointer;
+}
+.card-title {
+	text-align: center;
+}
+.card-right {
+	width: 100%;
+}
+.card-left,
+.card-right {
+	display: flex;
+	flex-direction: column;
+}
+.card-left span {
+	background: orange;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.horizontal-card-body{
+	padding-left: 1em;
+}
+.horizontal-card img {
+	width: 150px;
+	height: 150px;
+}
+.horizontal-card-footer {
+	margin-top: auto;
+	padding-left: 90%;
+}

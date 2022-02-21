@@ -1,0 +1,12 @@
+<a [routerLink]="['/home']">
+    Go Home
+</a>
+
+<div class="card">
+    <img src="{{apiUrlImage}}{{movie?.poster_path}}" alt="{{movie?.title}}" style="width:100%">
+    <div class="content">
+        <h2>{{movie?.title}}</h2>
+        <h4><b>{{movie?.vote_average}}/{{vote_max}}</b></h4>
+        <p>{{movie?.overview}}</p>
+    </div>
+</div>

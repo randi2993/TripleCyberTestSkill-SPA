@@ -1,0 +1,32 @@
+<div style="text-align:center">
+    <h1>
+        {{ title }} {{ date }}
+    </h1>
+    <img width="300" alt="home" src="/assets/img/home.jpg" [routerLink]="['']">
+</div>
+
+<div class="container pb-4">
+    <mat-paginator [length]="moviesPaginator?.total_results" [pageSize]="20" [pageSizeOptions]="[20]"
+        aria-label="Select page" (page)="changePage($event)" [showFirstLastButtons]="true">
+    </mat-paginator>
+    <div class="container pb-4">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="horizontal-card" *ngFor="let movie of moviesPaginator?.results"
+                    [routerLink]="['/movie-details', movie?.id]">
+                    <div class="card-left">
+                        <img src="{{apiUrlImage}}{{movie.poster_path}}" />
+                        <span>{{movie.release_date}}</span>
+                    </div>
+                    <div class="card-right">
+                        <div class="horizontal-card-body">
+                            <h4 class="card-title">{{movie.title}} {{movie.id}}</h4>
+                        </div>
+                        <div class="horizontal-card-footer">
+                            <a class="card-text status">{{movie.vote_average}}/{{vote_max}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
